@@ -103,7 +103,7 @@ export default function Results({ score, totalQuestions, onRestart }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                 >
-                    {isPerfect ? 'You Did It! 💖' : 'Almost There... 💫'}
+                    {isPerfect ? 'You Did It! 🎉' : 'Almost There... 💫'}
                 </motion.h1>
 
                 {/* Message */}
@@ -114,11 +114,11 @@ export default function Results({ score, totalQuestions, onRestart }) {
                     transition={{ delay: 0.7 }}
                 >
                     {isPerfect
-                        ? "You truly are amazing! Every answer was perfect, just like you."
+                        ? "You absolutely crushed it! Every single answer was on point. You're amazing!"
                         : `You got ${score} out of ${totalQuestions}. Don't worry, give it another shot!`}
                 </motion.p>
 
-                {/* Love Message (only for perfect score) */}
+                {/* Secret Message (only for perfect score) */}
                 {isPerfect && (
                     <motion.div
                         className="results__love-message"
@@ -126,9 +126,9 @@ export default function Results({ score, totalQuestions, onRestart }) {
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ delay: 1.0, type: 'spring' }}
                     >
-                        "You are the most beautiful person I know — inside and out.
-                        Every moment with you feels like a dream I never want to wake up from.
-                        I just wanted you to know... you're incredibly special to me. 💕🌹"
+                        "You're one of the most awesome people out there!
+                        The world is a better place because of you.
+                        Never forget how amazing you truly are! 🌟✨"
                     </motion.div>
                 )}
 

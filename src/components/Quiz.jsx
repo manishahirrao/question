@@ -4,50 +4,50 @@ import { motion, AnimatePresence } from 'framer-motion'
 const QUESTIONS = [
     {
         id: 1,
-        question: "What's the most important thing in a relationship? 💕",
-        options: ['Money', 'Trust & Loyalty', 'Looks', 'Fame'],
+        question: "What's the most important quality in a person? 🌟",
+        options: ['Money', 'Kindness & Honesty', 'Looks', 'Popularity'],
         correct: 1,
     },
     {
         id: 2,
-        question: 'If your partner is sad, what should you do? 🥺',
+        question: 'If your friend is going through a tough time, what should you do? 🤝',
         options: [
             'Ignore them',
-            'Tell them to stop being dramatic',
-            'Be there, listen & comfort them',
-            'Give them space forever',
+            'Tell them to get over it',
+            'Be there, listen & support them',
+            'Wait for them to figure it out',
         ],
         correct: 2,
     },
     {
         id: 3,
-        question: 'What makes someone truly beautiful? ✨',
+        question: 'What truly makes someone stand out? ✨',
         options: [
-            'Expensive clothes',
-            'A kind and loving heart',
+            'Expensive stuff',
+            'A genuine and caring personality',
             'Social media followers',
-            'Being perfect',
+            'Being perfect all the time',
         ],
         correct: 1,
     },
     {
         id: 4,
-        question: "Love means... 💖",
+        question: 'True friendship means... 💫',
         options: [
-            'Changing someone completely',
-            'Accepting someone with their flaws',
-            'Only being happy',
-            'Never disagreeing',
+            'Changing who someone is',
+            'Accepting people as they are',
+            'Only hanging out when it\'s fun',
+            'Never having disagreements',
         ],
         correct: 1,
     },
     {
         id: 5,
-        question: 'The person who sent you this link... 🌹',
+        question: 'The person who sent you this link... 🎯',
         options: [
-            "Doesn't care about you",
+            "Doesn't really know you",
             'Sent it by accident',
-            'Really likes you & thinks you\'re special',
+            'Thinks you\'re awesome & wants you to know!',
             'Is just bored',
         ],
         correct: 2,
@@ -186,7 +186,7 @@ export default function Quiz({ onComplete }) {
                                     transition={{ duration: 0.3 }}
                                 >
                                     {isCorrect
-                                        ? '✨ Perfect! You got it right!'
+                                        ? '✨ Nailed it! You got it right!'
                                         : '💔 Oops! Not quite right...'}
                                 </motion.div>
                             )}

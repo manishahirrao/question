@@ -56,7 +56,7 @@ export default function GateCard({ onAccept, onLeave }) {
                         animate={{ scale: 1, rotate: 0 }}
                         transition={{ delay: 0.4, type: 'spring' }}
                     >
-                        💌
+                        🎯
                     </motion.div>
                 )}
 
@@ -66,7 +66,7 @@ export default function GateCard({ onAccept, onLeave }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
                 >
-                    Hey You...
+                    Hey There...
                 </motion.h1>
 
                 <motion.p
@@ -75,8 +75,8 @@ export default function GateCard({ onAccept, onLeave }) {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8 }}
                 >
-                    Someone special made this just for you 💕<br />
-                    But first, you need to prove something...
+                    Someone made this challenge just for you! 🎯<br />
+                    Think you're smart enough? Prove it...
                 </motion.p>
 
                 <motion.div
@@ -85,7 +85,7 @@ export default function GateCard({ onAccept, onLeave }) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.0 }}
                 >
-                    ⚠️ You must answer ALL 5 questions correctly to unlock the final message... or leave! 💔
+                    ⚠️ You must answer ALL 5 questions correctly to unlock the secret message... or leave! �
                 </motion.div>
 
                 <motion.div
@@ -100,7 +100,7 @@ export default function GateCard({ onAccept, onLeave }) {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Yes, I'm Ready! 💕
+                        Yes, I'm Ready! �
                     </motion.button>
                     <motion.button
                         className="btn btn--secondary"

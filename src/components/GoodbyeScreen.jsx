@@ -64,9 +64,9 @@ export default function GoodbyeScreen({ onBack }) {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.8 }}
                 >
-                    That's okay... but just know that someone out there<br />
-                    really wanted to tell you something special. 💌<br /><br />
-                    Maybe someday you'll come back? 🥺
+                    That's okay... but you're missing out on something cool! 😏<br />
+                    There's a secret message waiting if you ace the challenge.<br /><br />
+                    Maybe you'll come back when you're ready? 🤔
                 </motion.p>
 
                 <motion.div
@@ -80,7 +80,7 @@ export default function GoodbyeScreen({ onBack }) {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
-                        Wait, Take Me Back! 💕
+                        Wait, I'll Try! 💪
                     </motion.button>
                 </motion.div>
             </div>

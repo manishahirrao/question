@@ -7,7 +7,7 @@ const CELEBRATION_LOTTIE_URL = 'https://assets4.lottiefiles.com/packages/lf20_u4
 export default function WelcomeSplash({ onComplete }) {
     const [celebrationData, setCelebrationData] = useState(null)
     const [displayText, setDisplayText] = useState('')
-    const fullText = 'Welcome, Beautiful! 🌹'
+    const fullText = 'Welcome, Challenger! 🔥'
     const timerRef = useRef(null)
 
     useEffect(() => {
@@ -88,8 +88,8 @@ export default function WelcomeSplash({ onComplete }) {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 2.5 }}
                 >
-                    Get ready for a little challenge...<br />
-                    Let's see how well you know! 💫
+                    Get ready for a fun challenge...<br />
+                    Let's see how smart you really are! 💫
                 </motion.p>
 
                 {/* Loading dots */}
