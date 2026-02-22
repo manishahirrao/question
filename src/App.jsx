@@ -6,7 +6,7 @@ import Quiz from './components/Quiz'
 import Results from './components/Results'
 import ConfirmScreen from './components/ConfirmScreen'
 import GoodbyeScreen from './components/GoodbyeScreen'
-import { sendAnswersToEmail } from './utils/sendEmail'
+import { sendAnswersToEmail, sendConfirmationToEmail } from './utils/sendEmail'
 
 // Floating particles background
 function ParticlesBackground() {
@@ -59,10 +59,12 @@ function App() {
   const handleConfirmYes = () => {
     setHonestAnswer('yes')
     setScreen('results')
+    sendConfirmationToEmail(answers, 'yes')
   }
   const handleConfirmNo = () => {
     setHonestAnswer('no')
     setScreen('results')
+    sendConfirmationToEmail(answers, 'no')
   }
   const handleRestart = () => {
     setAnswers({})
