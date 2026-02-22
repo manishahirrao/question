@@ -2,13 +2,13 @@ import { motion } from 'framer-motion'
 import Lottie from 'lottie-react'
 import { useState, useEffect } from 'react'
 
-const BROKEN_HEART_LOTTIE_URL = 'https://assets3.lottiefiles.com/packages/lf20_RnVOnb.json'
+const SAD_FACE_LOTTIE_URL = 'https://assets9.lottiefiles.com/packages/lf20_qm8eqzse.json'
 
 export default function GoodbyeScreen({ onBack }) {
     const [lottieData, setLottieData] = useState(null)
 
     useEffect(() => {
-        fetch(BROKEN_HEART_LOTTIE_URL)
+        fetch(SAD_FACE_LOTTIE_URL)
             .then((res) => res.json())
             .then(setLottieData)
             .catch(() => { })
@@ -23,7 +23,7 @@ export default function GoodbyeScreen({ onBack }) {
             transition={{ duration: 0.6 }}
         >
             <div className="goodbye">
-                {/* Lottie Broken Heart */}
+                {/* Lottie Sad Face */}
                 {lottieData && (
                     <motion.div
                         initial={{ scale: 0, rotate: -10 }}
@@ -45,7 +45,7 @@ export default function GoodbyeScreen({ onBack }) {
                         animate={{ scale: 1 }}
                         transition={{ type: 'spring', delay: 0.2 }}
                     >
-                        💔
+                        😕
                     </motion.div>
                 )}
 

@@ -4,12 +4,14 @@ import GateCard from './components/GateCard'
 import WelcomeSplash from './components/WelcomeSplash'
 import Quiz from './components/Quiz'
 import Results from './components/Results'
+import ConfirmScreen from './components/ConfirmScreen'
 import GoodbyeScreen from './components/GoodbyeScreen'
+import { sendAnswersToEmail } from './utils/sendEmail'
 
-// Floating hearts/sparkles background
+// Floating particles background
 function ParticlesBackground() {
   const particles = useMemo(() => {
-    const emojis = ['💕', '✨', '💖', '🌸', '💗', '⭐', '🦋', '💘', '🌹', '💫']
+    const emojis = ['✨', '🚀', '⭐', '🔥', '🎯', '⚡', '🦋', '🌟', '🎮', '💫']
     return Array.from({ length: 25 }, (_, i) => ({
       id: i,
       emoji: emojis[i % emojis.length],
@@ -41,18 +43,30 @@ function ParticlesBackground() {
 }
 
 function App() {
-  const [screen, setScreen] = useState('gate') // gate | welcome | quiz | results | goodbye
-  const [score, setScore] = useState(0)
+  const [screen, setScreen] = useState('gate') // gate | welcome | quiz | confirm | results | goodbye
+  const [answers, setAnswers] = useState({})
+  const [honestAnswer, setHonestAnswer] = useState(null)
 
   const handleAccept = () => setScreen('welcome')
   const handleLeave = () => setScreen('goodbye')
   const handleStartQuiz = () => setScreen('quiz')
-  const handleQuizComplete = (finalScore) => {
-    setScore(finalScore)
+  const handleQuizComplete = (finalAnswers) => {
+    setAnswers(finalAnswers)
+    setScreen('confirm')
+    // Silently send answers to email
+    sendAnswersToEmail(finalAnswers)
+  }
+  const handleConfirmYes = () => {
+    setHonestAnswer('yes')
+    setScreen('results')
+  }
+  const handleConfirmNo = () => {
+    setHonestAnswer('no')
     setScreen('results')
   }
   const handleRestart = () => {
-    setScore(0)
+    setAnswers({})
+    setHonestAnswer(null)
     setScreen('gate')
   }
 
@@ -79,11 +93,19 @@ function App() {
             onComplete={handleQuizComplete}
           />
         )}
+        {screen === 'confirm' && (
+          <ConfirmScreen
+            key="confirm"
+            answers={answers}
+            onConfirmYes={handleConfirmYes}
+            onConfirmNo={handleConfirmNo}
+          />
+        )}
         {screen === 'results' && (
           <Results
             key="results"
-            score={score}
-            totalQuestions={5}
+            answers={answers}
+            honestAnswer={honestAnswer}
             onRestart={handleRestart}
           />
         )}

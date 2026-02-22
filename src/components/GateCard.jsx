@@ -2,16 +2,16 @@ import { motion } from 'framer-motion'
 import Lottie from 'lottie-react'
 import { useState, useEffect } from 'react'
 
-// Lottie heart animation data (inline minimal heart)
-const HEART_LOTTIE_URL = 'https://assets2.lottiefiles.com/packages/lf20_jR229r.json'
+// Lottie trophy/star animation
+const STAR_LOTTIE_URL = 'https://assets9.lottiefiles.com/packages/lf20_touohxv0.json'
 
 export default function GateCard({ onAccept, onLeave }) {
-    const [heartData, setHeartData] = useState(null)
+    const [starData, setStarData] = useState(null)
 
     useEffect(() => {
-        fetch(HEART_LOTTIE_URL)
+        fetch(STAR_LOTTIE_URL)
             .then((res) => res.json())
-            .then(setHeartData)
+            .then(setStarData)
             .catch(() => { })
     }, [])
 
@@ -34,22 +34,22 @@ export default function GateCard({ onAccept, onLeave }) {
                     delay: 0.2,
                 }}
             >
-                {/* Lottie Heart */}
-                {heartData && (
+                {/* Lottie Star */}
+                {starData && (
                     <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.5, type: 'spring', stiffness: 300 }}
                     >
                         <Lottie
-                            animationData={heartData}
+                            animationData={starData}
                             loop
                             className="lottie-heart"
                         />
                     </motion.div>
                 )}
 
-                {!heartData && (
+                {!starData && (
                     <motion.div
                         className="gate-card__lock-icon"
                         initial={{ scale: 0, rotate: -180 }}
@@ -85,7 +85,7 @@ export default function GateCard({ onAccept, onLeave }) {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 1.0 }}
                 >
-                    ⚠️ You must answer ALL 5 questions correctly to unlock the secret message... or leave! �
+                    ✨ Answer all questions to unlock a secret message... or leave! 😏
                 </motion.div>
 
                 <motion.div
